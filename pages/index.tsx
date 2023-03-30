@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import { clsx } from 'clsx';
+import NavBarItem from './ccommon/NavBarItem/NavBarItem';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,8 +14,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main className={styles.main}>
-       
+      <main className='bg-back-100'>
+      <nav className="flex h-screen w-{264px} bg-back-100">
+      <div >
+        <h2 className="text-xs pl-2 text-font-100"> Games</h2>
+        <div>
+          <NavBarItem text="Coin flip" />
+        </div>
+       </div>
+      </nav>
       </main>
     </>
   )
