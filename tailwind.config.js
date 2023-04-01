@@ -22,16 +22,27 @@ module.exports = {
           300: "#1a2031",
           //Navbar bottom icons
           400: "#363a46",
+          //Max button
+          500: "#1c2233"
         },
         font: {
           //Navbar section titles
           100: "#a8add4",
           //Soon text color
           200: "#6872a6",
+          //Somehow gray
+          300: "#a1a8cf"
         },
         accent: {
+          //Lighter version 
+          100: "#899dd3",
           200: "#5d65ed",
+          //Binance
+          300: "#f2c94c"
         },
+       },
+       backgroundImage: {
+        main: "./background/coinflip_bg.jpeg"
        }
     },
   },
