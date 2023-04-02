@@ -1,18 +1,29 @@
-import React from 'react'
+import React from 'react';
+import {BsFillBellFill} from 'react-icons/bs';
+import {SiBinance} from 'react-icons/si';
+import {MdKeyboardArrowDown, MdOutlineLan} from 'react-icons/md';
 
 export default function Header() {
   return (
-         <div className=" w-full pl-4">
+         <div className="w-full">
       <div className="flex justify-between pt-5">
-        <div>
-        <button className=" py-2 uppercase rounded-full border-font-100 border-2 w-32">
-          <span className="text-font-100 text-sm"> Swap $Coins</span>  
+        <div className="mx-0">
+        <button className=" uppercase rounded-full border-accent-250 border min-w-[64px] w-[117px] h-[36px] ml-16 items-center">
+          <span className="text-accent-250 text-[13px]"> Swap $Coins</span>  
         </button>
         </div>
-        <div className="flex items-center pr-12 gap-x-4 ">
-          <span className="rounded-full bg-ui-100 text-white px-5 ">sdadasd</span>
-          <span className="rounded-full bg-ui-100 text-white px-2">sdadasd</span>
-          <button className="rounded-full bg-accent-200 px-2 text-white">Connect wallet</button>
+        <div className="flex items-center pr-16 gap-x-4 ">
+          <span className="rounded-full bg-ui-100 text-white w-[48px] h-[36px] flex items-center justify-center"> 
+            <BsFillBellFill />
+          </span>
+          <span className="rounded-full bg-ui-100 h-[36px] w-[70px] text-accent-300 flex items-center justify-center">
+            <SiBinance className="h-5 w-5"/>
+            <MdKeyboardArrowDown className="h-5 w-5" />
+          </span>
+          <div className="rounded-full bg-accent-300  text-font-350  text-[13px] font-medium w-[152px] h-[36px] flex items-center justify-center">
+          <p >Connect wallet</p>
+          <MdOutlineLan  className="ml-1"/>
+          </div>
         </div>
       </div>
        </div>

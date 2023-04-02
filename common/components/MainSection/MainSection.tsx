@@ -1,15 +1,15 @@
 import React from 'react'
-import {AiOutlineInfoCircle} from 'react-icons/ai';
-export default function 
-() {
+import MainHeader from './MainHeader';
+import MainMiddle from './MainMiddle';
+
+
+export default function () {
   return (
-    <section>
-        <div className="flex justify-between bg-main ">
-            <div>
-                <AiOutlineInfoCircle />
-            </div>
-        
+        <div className="py-6 px-16">
+          <div className="bg-background bg-opacity-20 bg-cover w-[100%] h-[650px] rounded-xl fill-current">
+            <MainHeader />
+            <MainMiddle />
         </div>
-    </section>
+        </div>
   )
 }

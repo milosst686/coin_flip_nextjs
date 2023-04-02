@@ -31,19 +31,28 @@ module.exports = {
           //Soon text color
           200: "#6872a6",
           //Somehow gray
-          300: "#a1a8cf"
+          300: "#a1a8cf",
+          //Connect wallet gray
+          350: "#232343",
+          //bet part color
+          400: "#a1a8cf"
         },
         accent: {
           //Lighter version 
           100: "#899dd3",
           200: "#5d65ed",
+          //Swap buttn
+          250: "#5965f1",
           //Binance
           300: "#f2c94c"
         },
        },
        backgroundImage: {
-        main: "./background/coinflip_bg.jpeg"
-       }
+        background : "url('/background/back.png')",
+      },
+      margin: {
+        custom1: '0px 8px 0px 2px',
+      }
     },
   },
   plugins: [],
