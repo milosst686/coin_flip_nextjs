@@ -8,11 +8,11 @@ export default function Header() {
          <div className="w-full">
       <div className="flex justify-between pt-5">
         <div className="mx-0">
-        <button className=" uppercase rounded-full border-accent-250 border min-w-[64px] w-[117px] h-[36px] ml-16 items-center">
+        <button className=" uppercase rounded-full border-accent-250 border  w-[117px] h-[36px] ml-10 items-center">
           <span className="text-accent-250 text-[13px]"> Swap $Coins</span>  
         </button>
         </div>
-        <div className="flex items-center pr-16 gap-x-4 ">
+        <div className="flex items-center pr-10 gap-x-4 ">
           <span className="rounded-full bg-ui-100 text-white w-[48px] h-[36px] flex items-center justify-center"> 
             <BsFillBellFill />
           </span>
