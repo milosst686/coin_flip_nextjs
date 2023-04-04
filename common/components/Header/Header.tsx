@@ -8,8 +8,8 @@ export default function Header() {
          <div className="w-full">
       <div className="flex justify-between pt-5">
         <div className="mx-0">
-        <button className=" uppercase rounded-full border-accent-250 border  w-[117px] h-[36px] ml-10 items-center">
-          <span className="text-accent-250 text-[13px]"> Swap $Coins</span>  
+        <button className=" rounded-xl border-ui-600 border  w-[117px] h-[36px] ml-10 text-ui-600 text-[15px] font-semibold">
+          Swap $BETS
         </button>
         </div>
         <div className="flex items-center pr-10 gap-x-4 ">

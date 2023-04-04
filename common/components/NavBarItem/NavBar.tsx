@@ -6,7 +6,7 @@ import clsx from 'clsx'
 export default function 
 () {
   return (
-       <div className={clsx(" bg-ui-300 h-screen w-[20%] shadow-black  shadow-2xl fixed ")}>
+       <div className={clsx(" bg-ui-300 h-screen max-w-[100%] shadow-black  shadow-2xl fixed ")}>
         <div className="flex items-center px-4 pt-4">
           <Image src="/logo/logotype.9180b64.svg" alt="/" width='45'height='45' />
         </div>

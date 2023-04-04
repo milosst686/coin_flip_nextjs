@@ -14,7 +14,7 @@ export default function Home() {
         <nav >
           <div className="flex bg-ui-200 min-h-screen">
             <NavBar/>
-            <div className=" ml-[20%] w-full">
+            <div className="ml-[15%] w-full">
               <Header />
               <MainSection  />
               <Footer />
