@@ -1,10 +1,9 @@
 import React from 'react'
 import FooterHistroryItem from './FooterHistroryItem'
 
-export default function 
-() {
+export default function Footer() {
   return (
-    <div className=" max-w-[100%] mx-10 pb-[40px]">
+    <div className=" max-w-[100%] mx-5 pb-[40px]">
         <table className="w-[100%] ">
             <thead className="border-b border-b-ui-400 text-white px-[8px] h-[60px]">
                 <tr>
@@ -15,7 +14,9 @@ export default function
                     <th className="text-start w-[15%] px-[8px]">Target</th>
                     <th className="text-start w-[10%] px-[8px]">Rolled</th>
                     <th className="text-start px-[8px]">Payout</th>
-                    <th className="text-end  w-[15%] px-[8px]">Time</th>
+                    <th className="flex justify-end items-center h-[60px]  ">
+                    <span>Time</span>
+                    </th>
                 </tr>
             </thead>
             <tbody className="w-[100%] text-white">

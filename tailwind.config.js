@@ -12,6 +12,12 @@ module.exports = {
           100: "#151b2b",
           //Main back
           200: "#0e151f",
+          //Drop down bg
+          250: "#0b0e16",
+          //Drop list button bg
+          300: "#101420",
+          //Drop down hower
+          350: "#101420"
         },
         ui: {
           //Navbar circle active
