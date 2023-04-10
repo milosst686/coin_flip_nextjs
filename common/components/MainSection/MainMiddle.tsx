@@ -7,7 +7,7 @@ import {SiBinance} from 'react-icons/si'
 export default function MainMiddle() {
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="flex flex-1 flex-col items-center p-[12px]">
+    <div className="flex flex-1 flex-col items-center lg:p-[12px]">
               <p className="text-white font-bold font-sans text-[72px] ">
                 1.94x
               </p>

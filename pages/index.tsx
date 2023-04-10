@@ -12,11 +12,11 @@ export default function Home() {
       </Head>
       <main>
         <nav >
-          <div className="flex bg-ui-200 min-h-screen tracking-[.07em]">
-            <div>
+          <div className="flex bg-ui-200 min-h-screen w-[100%] tracking-[.07em] overflow-auto">
+            <div className="max-w-[264px] invisible lg:visible">
             <NavBar />
             </div>
-            <div className="ml-[264px] w-full">
+            <div className="lg:ml-[264px] w-full">
               <Header />
               <MainSection  />
               <Footer />
