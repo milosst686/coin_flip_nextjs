@@ -7,7 +7,7 @@ export default function MainMiddleTextComp() {
               <div>
                     <div className="text-font-400 text-[10px] gap-x-2">
                         <span>50%</span>
-                        <span className="mr-2"> win chance</span>
+                        <span > win chance </span>
                         <span>3% house edge</span>
                     </div>
                     <div className="text-font-400 text-[10px] mt-2">
@@ -19,7 +19,7 @@ export default function MainMiddleTextComp() {
                     <div className="flex text-font-400 text-[10px] gap-x-1">
                         <span>Target payout: </span>
                         <span> ~0 MATIC</span>
-                        <IoMdInformationCircleOutline  className="text-accent-250 text-sm"/>
+                        <IoMdInformationCircleOutline  className="text-accent-300 text-sm mt-1"/>
                     </div>
                     <div className="text-font-400 text-[10px] mt-2">
                         <span>Bank: </span>

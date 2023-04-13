@@ -3,6 +3,8 @@ import MainSection from '@/common/components/MainSection/MainSection';
 import Header from '@/common/components/Header/Header';
 import NavBar from '@/common/components/NavBarItem/NavBar';
 import Footer from '@/common/components/Footer/Footer';
+import Analytics from '@/common/components/PopUpItems/Analytics';
+
 
 export default function Home() {
   return (
@@ -19,7 +21,9 @@ export default function Home() {
               <MainSection  />
               <Footer />
             </div>
+           
           </div>
+          
         </nav>
       </main>
     </>

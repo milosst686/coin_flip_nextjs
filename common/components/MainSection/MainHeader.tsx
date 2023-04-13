@@ -4,6 +4,7 @@ import {BsFileEarmarkCode, BsPersonCircle} from 'react-icons/bs'
 import {BiFullscreen} from  'react-icons/bi';
 import {MdVolumeUp, MdOutlineLensBlur} from 'react-icons/md';
 
+
 export default function MainHeader() {
   return (
     <div className="flex w-full justify-between ">

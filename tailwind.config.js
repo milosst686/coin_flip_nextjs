@@ -28,6 +28,8 @@ module.exports = {
         font: {
           //Navbar section titles
           100: "#a8add4",
+          //Footer text
+          150: "#e4e6f1",
           //Soon text color
           200: "#6872a6",
           //Somehow gray

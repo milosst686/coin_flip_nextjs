@@ -1,9 +1,15 @@
-import React from 'react';
+import React,{useState}from 'react';
 import {BsFillBellFill} from 'react-icons/bs';
 import {SiBinance} from 'react-icons/si';
-import {MdKeyboardArrowDown, MdOutlineLan} from 'react-icons/md';
+import {MdKeyboardArrowDown,MdKeyboardArrowUp,MdOutlineLan} from 'react-icons/md';
+import HeaderPadingItem from './HeaderPadingItem';
+import { ConnectButton } from '@rainbow-me/rainbowkit';
+
+import {FaGripLines} from 'react-icons/fa';
 
 export default function Header() {
+  
+  const [isOpen, setIsOpen] = useState(false);
   return (
          <div className="w-full">
       <div className="flex justify-between pt-5">
@@ -20,9 +26,22 @@ export default function Header() {
             <SiBinance className="h-5 w-5"/>
             <MdKeyboardArrowDown className="h-5 w-5" />
           </span>
-          <div className="rounded-full bg-accent-300  text-font-350  text-[13px] font-medium w-[152px] h-[36px] flex items-center justify-center">
-          <p >Connect wallet</p>
-          <MdOutlineLan  className="ml-1"/>
+          {
+            isOpen && (
+              <div className=" absolute rounded-[7px] w-[280px] h-[360px] bg-back-250 mt-[410px] ml-5 p-[4px]">
+                  <HeaderPadingItem  imageString="/logo/Polygon.png" text="Polygon" />
+                  <HeaderPadingItem  imageString="/logo/Binance.png" text="BNB Smart Chain" isCurrent isText="Current"/>
+                  <HeaderPadingItem  imageString="/logo/Avalanche.png" text="Avalanche" />
+                  <HeaderPadingItem  imageString="/logo/Arbitrum.png" text="Arbitrum One" isSoon isText="Soon"/>
+                  <HeaderPadingItem  imageString="/logo/Polygon.png" text="Polygon Testnet" />
+                  <HeaderPadingItem  imageString="/logo/Binance.png" text="BNB Smart Chain Testnet" />
+                  <HeaderPadingItem  imageString="/logo/Avalanche.png" text="Avalanche Testnet" />
+                  <HeaderPadingItem  imageString="/logo/Arbitrum.png" text="Arbitrum Tinkeby" isSoon isText="Soon"/>
+              </div>
+            )
+          }
+          <div className=" text-[13px] font-medium w-auto h-[36px] flex items-center justify-center cursor-pointer pr-1">
+          <ConnectButton />
           </div>
         </div>
       </div>

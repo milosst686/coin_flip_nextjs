@@ -11,11 +11,17 @@ export default function NavBarItem({text,isActive,isSoon}:NavBarInterface ) {
   
 
   return (
-  <div className={clsx("py-1 px-2", isActive && "bg-back-200 rounded-full")}>
-    <div className={clsx("flex items-center ", !isSoon && " hover:bg-back-100 rounded-full cursor-default")}>
-      <div className={clsx("h-4 w-4 rounded-full mx-2 ", isActive ? "bg-accent-200" : "bg-ui-100")}> </div>
-      <p className={clsx("flex-1",isActive ? "text-accent-200 mx-2" : isSoon ? "text-font-200 mx-2" : "text-white mx-2")}>{text}</p>
-      <button className= {clsx(isSoon? " rounded-full bg-ui-200 w-12 text-font-200" : "hidden")}>Soon</button>     
+  <div className={clsx("cursor-default h-[36px] text-[14px] mt-1 font-semibold flex items-center", isActive && "bg-back-200 rounded-full")}>
+    <div className={clsx("flex items-center w-full h-full px-[12px]", (!isSoon && !isActive)&& " hover:bg-back-100 rounded-full ")}>
+      <div className={clsx("h-[19px] w-[19px] rounded-full mr-[10px] ", isActive ? "bg-accent-300" : "bg-ui-100")}> </div>
+     <div className="flex items-center ">
+     <p className={clsx("w-[140px]",isActive ? "text-accent-300" : isSoon ? "text-font-200" : "text-white cursor-pointer")}>{text}</p>
+      <button className= {clsx("p-[4px] h-[16px] w-[42px] text-[11px] flex justify-center items-center",isSoon? " rounded-[14px] bg-ui-200 text-font-200 " : "hidden")}>
+        <span>
+        Soon
+        </span>
+        </button>    
+      </div> 
     </div>
   </div>
   )
