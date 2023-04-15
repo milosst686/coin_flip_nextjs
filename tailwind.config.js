@@ -12,6 +12,10 @@ module.exports = {
           100: "#151b2b",
           //Main back
           200: "#0e151f",
+          //Header padding bg
+          250:"#0b0e16",
+          //Header dropdown soon
+          300:"#101420"
         },
         ui: {
           //Navbar circle active

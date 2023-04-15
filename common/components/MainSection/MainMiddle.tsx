@@ -4,10 +4,20 @@ import MainMiddleTextComp from './MainMiddleTextComp';
 import MainPadding from './MainPadding';
 import {SiBinance} from 'react-icons/si'
 
+
 export default function MainMiddle() {
   const [isOpen, setIsOpen] = useState(false);
+
+  function closeOnClick()
+{
+  if(isOpen)
+  {
+    setIsOpen((prev)=> !prev);
+  }
+}
+
   return (
-    <div className="flex flex-1 flex-col items-center lg:p-[12px]">
+    <div className="flex flex-1 flex-col items-center lg:p-[12px]" onClick={() => closeOnClick()}>
               <p className="text-white font-bold font-sans text-[72px] ">
                 1.94x
               </p>
@@ -26,7 +36,7 @@ export default function MainMiddle() {
                     : (<RiArrowUpSFill className="text-font-400 text-2xl"/>) }
                     {
                     isOpen && (
-                    <div className="absolute rounded-[7px] w-[180px] h-[120px] bg-back-250 p-[4px] mt-[200px]">
+                    <div className="absolute rounded-[7px] w-[180px] h-[120px] bg-back-250 p-[4px] mt-[180px] left-[64%]" onClick={() => setIsOpen((prev)=> !prev)}>
                         <MainPadding  isPicked text="BNB" imageString="/logo/logo.svg" />
                         <MainPadding  text="BETS" imageString="/logo/Binance.png" hasInfo />
                     </div>

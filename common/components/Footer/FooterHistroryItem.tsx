@@ -26,7 +26,7 @@ export default function FooterHistroryItem({palyer,isWon,won,choosen,toPayOut,ho
             </span>
         </td>
         <td className="px-[8px]">
-            <span > 
+            <span >
                 1.95x
             </span>
         </td>

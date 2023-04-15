@@ -3,7 +3,6 @@ import MainSection from '@/common/components/MainSection/MainSection';
 import Header from '@/common/components/Header/Header';
 import NavBar from '@/common/components/NavBarItem/NavBar';
 import Footer from '@/common/components/Footer/Footer';
-import Analytics from '@/common/components/PopUpItems/Analytics';
 
 
 export default function Home() {
@@ -14,14 +13,15 @@ export default function Home() {
       </Head>
       <main>
         <nav >
-          <div className="flex bg-ui-200 min-h-screen">
-            <NavBar/>
-            <div className=" ml-[20%] w-full">
+          <div className="flex bg-ui-200 min-h-screen w-full tracking-wider">
+            <div className="invisible lg:visible">
+            <NavBar />
+            </div>
+            <div className=" lg:ml-[264px] w-full">
               <Header />
               <MainSection  />
               <Footer />
             </div>
-           
           </div>
           
         </nav>
