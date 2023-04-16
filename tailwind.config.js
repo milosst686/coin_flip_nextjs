@@ -12,6 +12,12 @@ module.exports = {
           100: "#151b2b",
           //Main back
           200: "#0e151f",
+          //Drop down bg
+          250: "#0b0e16",
+          //Drop list button bg
+          300: "#101420",
+          //Drop down hower
+          350: "#101420"
         },
         ui: {
           //Navbar circle active
@@ -23,7 +29,9 @@ module.exports = {
           //Navbar bottom icons
           400: "#363a46",
           //Max button
-          500: "#1c2233"
+          500: "#1c2233",
+          // swap button border
+          600: "#818cf6"
         },
         font: {
           //Navbar section titles

@@ -16,8 +16,10 @@ export default function MainHeader() {
               <MdOutlineLensBlur />
               </div>
               <div className=" border-2 border-accent-100 w-[103px] h-[32px] rounded-xl my-4 mr-6 text-accent-100 flex items-center justify-center">
-                <p >Analytics</p>
-                <BsPersonCircle className="ml-1"/>
+                <div className=" px-[12px] py-[8px] flex">
+                <p className="font-bold text-[12px]">Analytics</p>
+                <BsPersonCircle className="ml-1 font-bold"/>
+                </div>
               </div>
             </div>
   )
