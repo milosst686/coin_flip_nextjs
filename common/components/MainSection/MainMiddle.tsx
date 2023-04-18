@@ -17,12 +17,12 @@ export default function MainMiddle() {
 }
 
   return (
-    <div className="flex flex-1 flex-col items-center lg:p-[12px]" onClick={() => closeOnClick()}>
+    <div className="flex flex-1 flex-col items-center lg:p-[12px] p-2 w-full max-w-[440px]" onClick={() => closeOnClick()}>
               <p className="text-white font-bold font-sans text-[72px] ">
                 1.94x
               </p>
               <video src="/Matic_heads.webm"  width="140" height="140" autoPlay={true} />
-              <div className="flex justify-center w-2/5">
+              <div className="flex justify-center w-full">
                 <div className="uppercase bg-ui-200 text-sm font-bold text-font-400 rounded-l-xl h-[56px] w-1/3 flex items-center justify-center border-r border-r-ui-400">
                   <p>bet</p>
                 </div>
@@ -34,7 +34,7 @@ export default function MainMiddle() {
                 onClick={() => {if(!isOpen) {setIsOpen((prev)=> !prev);}
                                 if(isOpen) closeOnClick;
               }}>
-                    <div className="flex items-center w-full">
+                    <div className="flex items-center justify-center w-full">
                     {!isOpen ? (<RiArrowDownSFill className="text-font-400 text-2xl" />) 
                     : (<RiArrowUpSFill className="text-font-400 text-2xl"/>) }
                     {
@@ -45,7 +45,7 @@ export default function MainMiddle() {
                     </div>
                             )
                     }
-                        <span className="uppercase text-white text-[13px] font-bold m-custom1">
+                        <span className="uppercase text-white text-[13px] font-bold m-custom1 hidden md:block">
                           eth
                         </span>
                         <div className="w-[20px] h-[20px] mt-[2px] text-accent-300">
@@ -56,7 +56,7 @@ export default function MainMiddle() {
               </div>
               <MainMiddleTextComp />
               <div className="mt-12 w-[100%] flex justify-center">
-                <button type="button" disabled={true} className="rounded-xl border-2 border-accent-300 bg-transparent text-accent-300 text-[15px] font-semibold w-2/5  h-[50px]">
+                <button type="button" disabled={true} className="rounded-xl border-2 border-accent-300 bg-transparent text-accent-300 text-[15px] font-semibold w-full h-[50px]">
                     Connect your Wallet
                     </button>
               </div>

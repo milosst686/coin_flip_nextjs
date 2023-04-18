@@ -2,16 +2,16 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react'
 
-interface HistoryInterface{
-    palyer: string;
-    isWon: boolean;
+export interface HistoryInterface{
+    player: string;
+    isWon?: boolean;
     won: string;
     choosen: string;
     toPayOut: string;
-    houres: string;
+    hours: string;
 }
 
-export default function FooterHistroryItem({palyer,isWon,won,choosen,toPayOut,houres}:HistoryInterface) {
+export default function FooterHistroryItem({player,isWon,won,choosen,toPayOut,hours}:HistoryInterface) {
   return (
     <tr className="h-[48px] border-b border-b-ui-400 px-[8px]">
         <td>
@@ -22,7 +22,7 @@ export default function FooterHistroryItem({palyer,isWon,won,choosen,toPayOut,ho
         </td>
         <td >
             <span>
-            {palyer}
+            {player}
             </span>
         </td>
         <td>
@@ -45,7 +45,7 @@ export default function FooterHistroryItem({palyer,isWon,won,choosen,toPayOut,ho
         </td>
         <td className="text-end">
             <span>
-                {houres}
+                {hours}
             </span>
         </td>
     </tr>

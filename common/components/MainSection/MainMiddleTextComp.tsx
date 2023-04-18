@@ -4,7 +4,7 @@ import {IoMdInformationCircleOutline} from 'react-icons/io';
 export default function MainMiddleTextComp() {
   return (
     <div className="w-full flex justify-center">
-        <div className="flex w-[40%] justify-between mt-3 font-bold text-[12px] text-font-400 ">
+        <div className="flex w-full justify-between mt-3 font-bold text-[12px] text-font-400 ">
               <div>
                     <div className="gap-x-2">
                         <span>50%</span>
