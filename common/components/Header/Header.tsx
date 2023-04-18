@@ -25,13 +25,13 @@ export default function Header() {
   {
     if(isOpen)
     {
-      setIsOpen((prev)=> !prev);
+      setIsOpen(false);
     }
   }
   return (
-    <div className="w-full"  >
+    <div className="w-full" >
       <div className="flex justify-between pt-5">
-      <div className="flex items-center justify-center  lg:hidden ml-5 hover:bg-ui-400 rounded-full h-[40px] w-[36px]" onClick={()=>{openNavBar()}}>
+      <div className="flex items-center justify-center  lg:hidden ml-5 hover:bg-ui-400 rounded-full h-[40px] w-[36px]" onClick={()=>{openNavBar()}} >
             <FaGripLines className=" h-2/3 w-2/3 text-white"/>
           
           </div>
@@ -49,30 +49,32 @@ export default function Header() {
         </div>
         
         <div className="flex items-center pr-5 gap-x-4 ">
-         <div className="flex items-center gap-x-4 invisible lg:visible">
+         <div className="flex items-center lg:gap-x-4 lg:visible invisible">
          <span className="rounded-full bg-ui-100 text-white w-[48px] h-[36px] flex items-center justify-center"> 
             <BsFillBellFill />
           </span>
-          <span className="rounded-full bg-ui-100 h-[36px] w-[70px] text-accent-300 flex items-center justify-center" onClick={()=>{setIsOpen(!isOpen)}}>
+          <span className="rounded-full bg-ui-100 h-[36px] w-[70px] text-accent-300 flex items-center justify-center cursor-pointer"  onClick={() => {if(!isOpen) {setIsOpen(true)}
+               if(isOpen) closeOnClick();
+              }}>
             <SiBinance className="h-5 w-5"/>
             <MdKeyboardArrowDown className="h-5 w-5" />
           </span>
           {
             isOpen && (
-              <div className=" absolute rounded-[7px] w-[280px] h-[360px] bg-back-250 mt-[410px] ml-5 p-[4px]">
+              <div className=" absolute rounded-[7px] w-[280px] h-[360px] bg-back-250 mt-[410px] ml-5 p-[4px]"  onClick={() => setIsOpen((prev)=> !prev)}>
                   <HeaderPadingItem  imageString="/logo/Polygon.png" text="Polygon" />
-                  <HeaderPadingItem  imageString="/logo/Binance.png" text="BNB Smart Chain" isCurrent isText="Current"/>
+                  <HeaderPadingItem  imageString="/logo/Binance.png" text="BNB Smart Chain" isCurrent buttonText="Current"/>
                   <HeaderPadingItem  imageString="/logo/Avalanche.png" text="Avalanche" />
-                  <HeaderPadingItem  imageString="/logo/Arbitrum.png" text="Arbitrum One" isSoon isText="Soon"/>
+                  <HeaderPadingItem  imageString="/logo/Arbitrum.png" text="Arbitrum One" isSoon buttonText="Soon"/>
                   <HeaderPadingItem  imageString="/logo/Polygon.png" text="Polygon Testnet" />
                   <HeaderPadingItem  imageString="/logo/Binance.png" text="BNB Smart Chain Testnet" />
                   <HeaderPadingItem  imageString="/logo/Avalanche.png" text="Avalanche Testnet" />
-                  <HeaderPadingItem  imageString="/logo/Arbitrum.png" text="Arbitrum Tinkeby" isSoon isText="Soon"/>
+                  <HeaderPadingItem  imageString="/logo/Arbitrum.png" text="Arbitrum Tinkeby" isSoon buttonText="Soon"/>
               </div>
             )
           }
          </div>
-          <div className=" text-[13px] font-medium w-auto  flex items-center justify-center cursor-pointer pr-1">
+          <div className=" text-[13px] font-medium w-auto  flex items-center justify-center cursor-pointer pr-2">
           <ConnectButton />
           </div>
         </div>

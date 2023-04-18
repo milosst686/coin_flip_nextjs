@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import React from 'react'
 import {GoCheck} from 'react-icons/go'
+import {ImInfo} from 'react-icons/im'
 
 interface MainPadding{
     isPicked?: boolean;
@@ -24,8 +25,9 @@ export default function MainPadding({isPicked,text,imageString,hasInfo}:MainPadd
             <div className="flex items-center" >
              <Image src={imageString} alt="" width={24} height={24}/>
             </div>
-        <div className="ml-[16px] p-[12px]"></div>
-        
+        <div className={clsx(hasInfo? "p-[8px] text-white" : "hidden")}>
+        <ImInfo />
+        </div>
         </div>   
     </div>
   )

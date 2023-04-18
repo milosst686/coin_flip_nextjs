@@ -22,21 +22,24 @@ export default function MainMiddle() {
                 1.94x
               </p>
               <video src="/Matic_heads.webm"  width="140" height="140" autoPlay={true} />
-              <div className="flex justify-center">
-                <div className="uppercase bg-ui-200 text-sm font-bold text-font-400 rounded-l-xl h-[56px] w-[74px] flex items-center justify-center border-r border-r-ui-400">
-                  <p>BET</p>
+              <div className="flex justify-center w-2/5">
+                <div className="uppercase bg-ui-200 text-sm font-bold text-font-400 rounded-l-xl h-[56px] w-1/3 flex items-center justify-center border-r border-r-ui-400">
+                  <p>bet</p>
                 </div>
-                <div className="bg-ui-200 flex items-center border-r border-r-ui-400 w-2/5">
+                <div className="bg-ui-200 flex items-center border-r border-r-ui-400 w-2/3">
                 <input required type="text" inputMode="numeric" defaultValue={0} className=" bg-ui-200 text-white text-xl mx-[20px] w-1/2 " />
                 <button className=" bg-ui-400 text-font-400 rounded-xl m-[14px] h-[28px] w-[50px] ">max</button>
                 </div>
-                <div className="bg-ui-200 rounded-r-xl w-[150px] flex items-center justify-center cursor-pointer  hover:bg-ui-300"  onClick={() => setIsOpen((prev)=> !prev)}>
-                    <div className="flex items-center">
+                <div className="bg-ui-200 rounded-r-xl w-1/3 flex items-center justify-center cursor-pointer  hover:bg-ui-300"  
+                onClick={() => {if(!isOpen) {setIsOpen((prev)=> !prev);}
+                                if(isOpen) closeOnClick;
+              }}>
+                    <div className="flex items-center w-full">
                     {!isOpen ? (<RiArrowDownSFill className="text-font-400 text-2xl" />) 
                     : (<RiArrowUpSFill className="text-font-400 text-2xl"/>) }
                     {
                     isOpen && (
-                    <div className="absolute rounded-[7px] w-[180px] h-[120px] bg-back-250 p-[4px] mt-[180px] left-[64%]" onClick={() => setIsOpen((prev)=> !prev)}>
+                    <div className="absolute rounded-[7px] w-[180px] h-[120px] bg-back-250 p-[4px] top-[470px]" onClick={() => setIsOpen(false)}>
                         <MainPadding  isPicked text="BNB" imageString="/logo/logo.svg" />
                         <MainPadding  text="BETS" imageString="/logo/Binance.png" hasInfo />
                     </div>
@@ -53,7 +56,7 @@ export default function MainMiddle() {
               </div>
               <MainMiddleTextComp />
               <div className="mt-12 w-[100%] flex justify-center">
-                <button type="button" disabled={true} className="rounded-xl border-2 border-accent-300 bg-transparent text-accent-300 text-[15px] font-semibold lg:w-2/5 w-4/5 h-[50px]">
+                <button type="button" disabled={true} className="rounded-xl border-2 border-accent-300 bg-transparent text-accent-300 text-[15px] font-semibold w-2/5  h-[50px]">
                     Connect your Wallet
                     </button>
               </div>

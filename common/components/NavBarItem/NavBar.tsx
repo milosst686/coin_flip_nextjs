@@ -7,14 +7,14 @@ import {CgArrowLeftO} from 'react-icons/cg'
 
 export default function NavBar() {
   return (
-       <div className=" bg-ui-300 h-screen shadow-back-200 w-[264px]  shadow-2xl fixed pb-[20px] ">
+       <div className=" bg-ui-300 h-screen shadow-back-200 w-[264px]  shadow-2xl fixed pb-[20px] cursor-default">
         <div className=" px-[20px] py-[16px] ">
           <div className="flex items-center h-[50px]">
           <Image src="/logo/logo.svg" alt="/" width={34} height={34} className="my-[8px] mr-[11px]"/>
           <p className="font-extrabold text-[18px] text-white">BestGames</p>
           </div>
         </div>
-        <div className="px-[12px] py-[8px] h-[490px]">
+        <div className="px-[12px] py-[8px] h-[490px] ">
          <div className="text-font-100 h-[42px] uppercase px-[14px] text-[11px] font-semibold flex items-center">
          <p>Games</p>
          </div>
