@@ -33,13 +33,16 @@ export default function Footer() {
         <table className="w-[100%] ">
             <thead className="border-b border-b-ui-400 text-white px-[8px] h-[60px]">
                 <tr>
-                    <th className="text-start w-[15%] min-w-[15%]">
-                        sadsa
+                <th className="text-start w-[15%] min-w-[15%] px-[8px]">
+                        All
                     </th>
-                    <th className="text-start w-[15%] min-w-[15%]">dasda</th>
-                    <th className="text-start w-[15%] min-w-[15%]">dsad</th>
-                    <th className="text-start w-[15%] min-w-[15%]">sda</th>
-                    <th className="text-start w-[15%] min-w-[15%]">sda</th>
+                    <th className="text-start w-[10%] px-[8px]">Player</th>
+                    <th className="text-start w-[15%] px-[8px]">Target</th>
+                    <th className="text-start w-[10%] px-[8px]">Rolled</th>
+                    <th className="text-start px-[8px]">Payout</th>
+                    <th className="flex justify-end items-center h-[60px]  ">
+                    <span>Time</span>
+                    </th>
                 </tr>
             </thead>
             <tbody className="w-[100%] text-font-150 ">

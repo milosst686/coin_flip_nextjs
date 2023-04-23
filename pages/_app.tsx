@@ -11,6 +11,7 @@ import { configureChains,createClient,WagmiConfig} from 'wagmi';
 import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
+import { color } from 'framer-motion';
 
 const { chains, provider } = configureChains(
   [mainnet, polygon, optimism, arbitrum],
@@ -32,6 +33,7 @@ const wagmiClient = createClient({
 })
 
 export default function App({ Component, pageProps }: AppProps) {
+  
   return (
  <WagmiConfig client={wagmiClient}>
  <RainbowKitProvider  theme={lightTheme({
@@ -40,7 +42,8 @@ export default function App({ Component, pageProps }: AppProps) {
       borderRadius: 'large',
       fontStack: 'system',
       overlayBlur: 'small',
-    })}chains={chains}>
+    }
+    )}chains={chains}>
   <ChakraProvider>
   <Component {...pageProps} />
 </ChakraProvider>
