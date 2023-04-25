@@ -12,12 +12,10 @@ module.exports = {
           100: "#151b2b",
           //Main back
           200: "#0e151f",
-          //Drop down bg
-          250: "#0b0e16",
-          //Drop list button bg
-          300: "#101420",
-          //Drop down hower
-          350: "#101420"
+          //Header padding bg
+          250:"#0b0e16",
+          //Header dropdown soon
+          300:"#101420"
         },
         ui: {
           //Navbar circle active
@@ -36,6 +34,8 @@ module.exports = {
         font: {
           //Navbar section titles
           100: "#a8add4",
+          //Footer text
+          150: "#e4e6f1",
           //Soon text color
           200: "#6872a6",
           //Somehow gray

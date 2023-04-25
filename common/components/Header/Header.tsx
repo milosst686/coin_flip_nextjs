@@ -3,52 +3,65 @@ import {BsFillBellFill} from 'react-icons/bs';
 import {SiBinance} from 'react-icons/si';
 import {MdKeyboardArrowDown,MdKeyboardArrowUp,MdOutlineLan} from 'react-icons/md';
 import HeaderPadingItem from './HeaderPadingItem';
-
+import { ConnectButton } from '@rainbow-me/rainbowkit';
 import {FaGripLines} from 'react-icons/fa';
+import NavBar from '../NavBarItem/NavBar';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
+
   return (
-         <div className="w-full py-[4px] px-[16px]">
-      <div className="flex justify-between pt-5 ml">
-       <div className="flex items-center">
-       <div className="lg:hidden flex justify-center hover:bg-ui-400 rounded-full h-[35px] w-[35px]">
-             <button>
-             <FaGripLines  className="text-white text-xl "/>
-             </button>
+    <div className="w-full" >
+      <div className="flex justify-between pt-5">
+      <div className="flex items-center justify-center lg:hidden ml-5 hover:bg-ui-400 rounded-full h-[40px] w-[36px]" onClick={()=>{setIsOpen(!isOpen)}} >
+            <FaGripLines className=" h-[24px] w-[24px] text-white"/>
+          
           </div>
-        <div  className="flex">
-        <button className=" rounded-xl border-ui-600 border hover:bg-ui-300 lg:ml-0 w-[117px] h-[36px] ml-5 text-ui-600 text-[15px] font-semibold">
-          Swap $BETS
+          {
+                    isOpen && (
+                    <div className="absolute left-0 top-0 right-0 bottom-0 " onClick={()=>{setIsOpen(!isOpen)}}>
+                       <NavBar />
+                    </div>
+                            )
+                    }
+        <div className="mx-0 hidden lg:block">
+        <button className=" uppercase rounded-full border-accent-250 border  w-[117px] h-[36px] ml-5 items-center">
+          <span className="text-accent-250 text-[13px]"> Swap $Coins</span>  
         </button>
         </div>
-       </div>
-        <div className="flex items-center gap-x-4 ">
-          <span className="rounded-full bg-ui-100 text-white w-[48px] h-[36px] flex items-center justify-center"> 
+        
+        <div className="flex items-center pr-5 gap-x-4 ">
+         <div className="items-center lg:gap-x-4 hidden lg:flex">
+         <span className="rounded-full bg-ui-100 text-white w-[48px] h-[36px] flex items-center justify-center"> 
             <BsFillBellFill />
           </span>
-          <span className="rounded-full bg-ui-100 h-[36px] w-[70px] text-accent-300 flex items-center justify-center cursor-pointer" 
-          onClick={() => setIsOpen((prev)=> !prev)}>
+          <span className="rounded-full bg-ui-100 h-[36px] w-[70px] text-accent-300 flex items-center justify-center cursor-pointer"  onClick={()=>{setIsOpen(!isOpen)}}>
+
             <SiBinance className="h-5 w-5"/>
             {!isOpen ? (<MdKeyboardArrowDown className="h-5 w-5" />) : (<MdKeyboardArrowUp className="h-5 w-5" />) }
           </span>
           {
             isOpen && (
-              <div className=" absolute rounded-[7px] w-[280px] h-[360px] bg-back-250 mt-[400px] p-[4px]">
-                  <HeaderPadingItem  imageString="/logo/logo.png" text="Polygon" />
-                  <HeaderPadingItem  imageString="/logo/logo.png" text="BNB Smart Chain" isCurrent isText="Current"/>
-                  <HeaderPadingItem  imageString="/logo/logo.png" text="Avalanche" />
-                  <HeaderPadingItem  imageString="/logo/logo.png" text="Arbitrum One" isSoon isText="Soon"/>
-                  <HeaderPadingItem  imageString="/logo/logo.png" text="Polygon Testnet" />
-                  <HeaderPadingItem  imageString="/logo/logo.png" text="BNB Smart Chain Testnet" />
-                  <HeaderPadingItem  imageString="/logo/logo.png" text="Avalanche Testnet" />
-                  <HeaderPadingItem  imageString="/logo/logo.png" text="Arbitrum Tinkeby" isSoon isText="Soon"/>
+
+              <div className=" absolute rounded-[7px] w-[280px] h-[360px] bg-back-250 mt-[410px] ml-5 p-[4px]"  onClick={()=>{setIsOpen(!isOpen)}}>
+                  <HeaderPadingItem  imageString="/logo/Polygon.png" text="Polygon" />
+                  <HeaderPadingItem  imageString="/logo/Binance.png" text="BNB Smart Chain" isCurrent buttonText="Current"/>
+                  <HeaderPadingItem  imageString="/logo/Avalanche.png" text="Avalanche" />
+                  <HeaderPadingItem  imageString="/logo/Arbitrum.png" text="Arbitrum One" isSoon buttonText="Soon"/>
+                  <HeaderPadingItem  imageString="/logo/Polygon.png" text="Polygon Testnet" />
+                  <HeaderPadingItem  imageString="/logo/Binance.png" text="BNB Smart Chain Testnet" />
+                  <HeaderPadingItem  imageString="/logo/Avalanche.png" text="Avalanche Testnet" />
+                  <HeaderPadingItem  imageString="/logo/Arbitrum.png" text="Arbitrum Tinkeby" isSoon buttonText="Soon"/>
               </div>
             )
           }
-          <div className="rounded-full bg-accent-300  text-font-350  text-[13px] font-medium w-[152px] h-[36px] flex items-center justify-center cursor-pointer">
-          <p >Connect wallet</p>
-          <MdOutlineLan  className="ml-1"/>
+         </div>
+          <div className=" text-[13px] font-medium w-auto  flex items-center justify-center cursor-pointer pr-2">
+          <ConnectButton accountStatus="address"
+         showBalance={false}
+         chainStatus="icon" />
+
           </div>
         </div>
       </div>

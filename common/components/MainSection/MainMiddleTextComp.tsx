@@ -3,29 +3,36 @@ import {IoMdInformationCircleOutline} from 'react-icons/io';
 
 export default function MainMiddleTextComp() {
   return (
-    <div className="flex justify-between mt-3 font-medium  gap-x-5">
+
+    <div className="w-full flex justify-center">
+        <div className="flex w-full justify-between mt-3 font-bold lg:text-[12px] text-[10px] text-font-400 ">
               <div>
-                    <div className="text-font-400 text-[13px]">
+                    <div >
                         <span>50%</span>
-                        <span className="mr-2"> win chance</span>
+                        <span > win chance </span>
                         <span>3% house edge</span>
                     </div>
-                    <div className="text-font-400 text-[13px] mt-2">
+
+                    <div className="mt-2">
+
                         <span>Bank: </span>
                         <span>37,965.3165 MATIC</span>
                     </div>
                 </div>
                 <div className="text-right">
-                    <div className="flex text-font-400 text-[13px] ">
+
+                    <div className="lg:flex gap-x-1">
                         <span>Target payout: </span>
                         <span> ~0 MATIC</span>
-                        <IoMdInformationCircleOutline  className="text-accent-250 text-sm mt-1"/>
+                        <IoMdInformationCircleOutline  className="text-accent-300 text-sm mt-[2px]"/>
                     </div>
-                    <div className="text-font-400 text-[13px] mt-2">
+                    <div className="mt-2">
+
                         <span>Bank: </span>
                         <span>37,965.3165 MATIC</span>
                     </div>
                 </div>
               </div>
+    </div>
   )
 }

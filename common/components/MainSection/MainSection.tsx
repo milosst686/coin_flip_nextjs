@@ -5,9 +5,9 @@ import MainMiddle from './MainMiddle';
 
 export default function MainSection() {
   return (
-        <div className="py-4 px-5">
-          <div className="bg-background bg-opacity-10 bg-cover lg:bg-[length:100%_650px] w-[100%] h-[600px] rounded-xl fill-current">
-            <MainHeader />
+        <div className="py-6 px-5 cursor-default">
+          <div className="bg-background bg-opacity-20 bg-cover w-[100%] h-[650px] rounded-xl fill-current flex flex-col items-center">
+            <MainHeader/>
             <MainMiddle />
         </div>
         </div>
