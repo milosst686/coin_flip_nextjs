@@ -106,7 +106,7 @@ export default function Footer() {
                         All
                     </th>
                     <th className="text-start w-[10%] px-[8px]">Player</th>
-                    <th className="text-start w-[15%] px-[8px]">Target</th>                   
+                    <th className="text-start w-[15%] px-[8px]">Target</th>                  
                     <th className="text-start w-[10%] px-[8px]">Rolled</th>
                     <th className="text-start px-[8px]">Payout</th>
                     <th className="flex justify-end items-center h-[60px]  ">
@@ -114,13 +114,18 @@ export default function Footer() {
                     </th>
                 </tr>
             </thead>
+
             <tbody className="w-[100%] text-font-150 ">
                 {
                 betsHistory.map((e: HistoryInterface) => <FooterHistroryItem player={e.player} isWon={e.isWon} won={e.won} choosen={e.choosen}
                  toPayOut={e.toPayOut} hours={e.hours} key={Date.now()}/>)
                 }
+
             </tbody>
         </table>
+        <div>
+    
+        </div>
     </div>
   )
 }

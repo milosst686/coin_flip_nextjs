@@ -19,9 +19,11 @@ export default function MainHeader() {
               <MdVolumeUp  />
               <MdOutlineLensBlur />
               </div>
+
               <div className="border-2 border-accent-100 px-2 py-1 rounded-xl text-accent-100 flex items-center justify-center cursor-pointer" onClick={()=>{setIsOpen(!isOpen)}} >
                 <p >Analytics</p>
                 <BsPersonCircle className="ml-1"/>
+
               </div>
               {
                     isOpen && (                      

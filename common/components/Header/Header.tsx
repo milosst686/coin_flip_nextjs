@@ -1,4 +1,4 @@
-import React,{useState}from 'react';
+import React, { useState } from 'react';
 import {BsFillBellFill} from 'react-icons/bs';
 import {SiBinance} from 'react-icons/si';
 import {MdKeyboardArrowDown,MdKeyboardArrowUp,MdOutlineLan} from 'react-icons/md';
@@ -37,11 +37,13 @@ export default function Header() {
             <BsFillBellFill />
           </span>
           <span className="rounded-full bg-ui-100 h-[36px] w-[70px] text-accent-300 flex items-center justify-center cursor-pointer"  onClick={()=>{setIsOpen(!isOpen)}}>
+
             <SiBinance className="h-5 w-5"/>
-            <MdKeyboardArrowDown className="h-5 w-5" />
+            {!isOpen ? (<MdKeyboardArrowDown className="h-5 w-5" />) : (<MdKeyboardArrowUp className="h-5 w-5" />) }
           </span>
           {
             isOpen && (
+
               <div className=" absolute rounded-[7px] w-[280px] h-[360px] bg-back-250 mt-[410px] ml-5 p-[4px]"  onClick={()=>{setIsOpen(!isOpen)}}>
                   <HeaderPadingItem  imageString="/logo/Polygon.png" text="Polygon" />
                   <HeaderPadingItem  imageString="/logo/Binance.png" text="BNB Smart Chain" isCurrent buttonText="Current"/>
@@ -59,6 +61,7 @@ export default function Header() {
           <ConnectButton accountStatus="address"
          showBalance={false}
          chainStatus="icon" />
+
           </div>
         </div>
       </div>

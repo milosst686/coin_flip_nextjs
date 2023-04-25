@@ -27,7 +27,9 @@ module.exports = {
           //Navbar bottom icons
           400: "#363a46",
           //Max button
-          500: "#1c2233"
+          500: "#1c2233",
+          // swap button border
+          600: "#818cf6"
         },
         font: {
           //Navbar section titles

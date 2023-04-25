@@ -1,19 +1,29 @@
 import React from 'react'
 import NavBarItem from './NavBarItem'
 import Image from 'next/image'
+<<<<<<< HEAD
 import { FaTelegramPlane, FaTwitter } from 'react-icons/fa'
 import { SiCoinmarketcap } from 'react-icons/si'
 import {CgArrowLeftO} from 'react-icons/cg'
+=======
+import {FaTwitter, FaTelegramPlane} from 'react-icons/fa'
+import {SiCoinmarketcap} from 'react-icons/si'
+>>>>>>> main
 
 export default function NavBar() {
   return (
+<<<<<<< HEAD
        <div className=" bg-ui-300 h-screen shadow-back-200 w-[264px]  shadow-2xl fixed pb-[20px] cursor-default">
+=======
+       <div className=" bg-ui-300 h-screen shadow-black  shadow-2xl fixed pb-[20px]">
+>>>>>>> main
         <div className=" px-[20px] py-[16px] ">
           <div className="flex items-center h-[50px]">
           <Image src="/logo/logo.svg" alt="/" width={34} height={34} className="my-[8px] mr-[11px]"/>
           <p className="font-extrabold text-[18px] text-white">BestGames</p>
           </div>
         </div>
+<<<<<<< HEAD
         <div className="px-[12px] py-[8px] h-[490px] ">
          <div className="text-font-100 h-[42px] uppercase px-[14px] text-[11px] font-semibold flex items-center">
          <p>Games</p>
@@ -21,15 +31,34 @@ export default function NavBar() {
             <div>
               <NavBarItem text="Dice" />
               <NavBarItem text="Coin toss" isActive />
+=======
+       <div>
+       <div className="px-[12px] py-[8px] h-[490px]">
+          <div className=" flex items-center h-[45px] font-semibold">
+          <h2 className=" text-font-100 uppercase px-[14px] text-[12px]">Games</h2>
+          </div>
+        <div>
+            <div>
+              <NavBarItem text="Dice"  />
+              <NavBarItem text="Coin toss"  isActive/>
+>>>>>>> main
               <NavBarItem text="Roulette"  />
               <NavBarItem text="Keno"  isSoon/>
               <NavBarItem text="Toss battle"  isSoon/>
               <NavBarItem text="Rusian Roulette"  isSoon/>
             </div>
+<<<<<<< HEAD
           <div  className="text-[11px] font-semibold text-font-100 uppercase px-[14px] h-[42px] mt-[30px] flex items-center">
           <p>protocol</p>
           </div>
         <div >
+=======
+        </div>
+        <div className="px-[14px] mt-[30px] h-[45px] flex items-center">
+        <h2 className="text-[12px]  text-font-100 uppercase">protocol</h2>
+        </div>
+        <div>
+>>>>>>> main
             <div>
               <NavBarItem text="Analytics"  />
               <NavBarItem text="Leaderboard"  />
@@ -37,7 +66,11 @@ export default function NavBar() {
             </div>
         </div>
         </div>
+<<<<<<< HEAD
         <div>
+=======
+       </div>
+>>>>>>> main
         <div className="flex  text-white text-[12px] font-semibold ">
           <a href="" target="_blank" className="px-[16px] h-[44px]">
             <div className="flex items-center justify-center pl-[8px] py-[12px] h-[20px] ">
@@ -57,7 +90,11 @@ export default function NavBar() {
        <div className="px-[16px]">
        <div className="flex items-center text-white  w-[232px] h-[40px] text-[15px]" >
           <a href="" target="_blank" className=" flex items-center justify-center w-[36px] h-[36px] hover:bg-ui-400 rounded-full">
+<<<<<<< HEAD
           <CgArrowLeftO className="w-[15px] h-[15px]" />
+=======
+            <img src="/rightArrow.png" alt="" height={15} width={15}/>
+>>>>>>> main
           </a>
           <a href="" target="_blank" className=" flex items-center justify-center w-[36px] h-[36px] hover:bg-ui-400 rounded-full">
             <FaTwitter className="w-[15px] h-[15px]"/>
@@ -69,9 +106,16 @@ export default function NavBar() {
             <SiCoinmarketcap className="w-[15px] h-[15px]"/>
           </a>
         </div>
+<<<<<<< HEAD
         <hr className="border-t-ui-100 mx-[24px] my-[12px]" />
         <div className="lg:px-[16px] h-[60px] ">
           <div className=" flex items-center  justify-center w-[132px] my-[12px] mr-[32px]  h-[36px] rounded-[14px] hover:bg-ui-400 bg-ui-500 shadow-lg shadow-back-200 ">
+=======
+       </div>
+        <hr className="border-t-ui-100 mx-[24px] my-[12px]" />
+        <div className="px-[16px] h-[60px] flex items-center">
+          <div className=" flex items-center  justify-center w-[132px] my-[12px] mr-[32px]  h-[36px] rounded-[14px] hover:bg-ui-400 bg-ui-500 shadow-lg shadow-black ">
+>>>>>>> main
             <a href="" target="_blank" className=" flex items-center text-sm text-white gap-x-1 ">
               <img src="/logo/logo.svg" alt="" width={20} height={20}/>
             <span>
@@ -79,8 +123,12 @@ export default function NavBar() {
             </span>
           </a>
           </div>
+<<<<<<< HEAD
            </div>
        </div>
+=======
+          <div className="w-[40px]"></div>
+>>>>>>> main
         </div>
        </div>
   )

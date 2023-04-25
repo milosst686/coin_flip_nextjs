@@ -26,11 +26,13 @@ export default function FooterHistroryItem({player,isWon,won,choosen,toPayOut,ho
             </span>
         </td>
         <td >
+
             <span >
                 1.95x
             </span>
         </td>
         <td >
+
             <span>
             {choosen}
             </span>
@@ -46,6 +48,7 @@ export default function FooterHistroryItem({player,isWon,won,choosen,toPayOut,ho
         <td className="text-end">
             <span>
                 {hours}
+
             </span>
         </td>
     </tr>

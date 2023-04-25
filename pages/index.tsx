@@ -18,6 +18,7 @@ export default function Home() {
             <NavBar />
             </div>
             <div className=" lg:ml-[264px] w-full">
+
               <Header />
               <MainSection  />
               <Footer />
