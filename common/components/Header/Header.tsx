@@ -56,7 +56,9 @@ export default function Header() {
           }
          </div>
           <div className=" text-[13px] font-medium w-auto  flex items-center justify-center cursor-pointer pr-2">
-          <ConnectButton />
+          <ConnectButton accountStatus="address"
+         showBalance={false}
+         chainStatus="icon" />
           </div>
         </div>
       </div>

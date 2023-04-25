@@ -6,7 +6,7 @@ import AnalyticHistory from './AnalyticHistory'
 export default function Analytics() {
   return (
     <div className="w-full h-screen bg-opacity-90 bg-back-200 flex items-center justify-center left-0 top-0 right-0 bottom-0 fixed">
-        <div className="lg:w-[60%] w-[95%] h-[90%] lg:m-[24px] m-[12px] bg-back-100">
+        <div className="lg:w-[40%] w-[95%] h-[90%] lg:m-[24px] m-[12px] bg-back-100">
         <div className=" h-full bg-[rgba(54,57,99,.5)] opacity-100 lg:rounded-[14px] rounded-[20px] overflow-y-scroll ">
           <div className="lg:h-[96px] h-[60px] w-full lg:px-[40px] px-[20px] flex items-center justify-between">
             <div>
@@ -22,8 +22,13 @@ export default function Analytics() {
           </div>
           <div className="lg:px-[40px] px-[20px] lg:pb-[40px] pb-[20px]">
           <div className="w-[100%] h-auto">
-                <Currency />
-              <AnMiddleWindow />
+                <Currency button="py-[7px] px-[12px] h-[26px] flex items-center"/>
+              <AnMiddleWindow 
+                outerDiv="h-[36px] flex items-center"  
+                innerDiv="h-[18px] w-1/2  flex items-center" 
+                textColor="text-font-100" 
+                numberColor="text-font-150 text-right justify-end"
+              />
           </div>
              <div className="p-[12px] w-full ">
               <div className="h-[52px] w-[520] text-font-100 flex items-center font-bold">

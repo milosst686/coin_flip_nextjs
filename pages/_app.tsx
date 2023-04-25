@@ -3,9 +3,9 @@ import { ChakraProvider } from '@chakra-ui/react'
 import type { AppProps } from 'next/app'
 import '@rainbow-me/rainbowkit/styles.css';
 import {
+  darkTheme,
   getDefaultWallets,
-  lightTheme,
-  RainbowKitProvider,
+    RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';  
 import { configureChains,createClient,WagmiConfig} from 'wagmi';
 import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
@@ -36,12 +36,9 @@ export default function App({ Component, pageProps }: AppProps) {
   
   return (
  <WagmiConfig client={wagmiClient}>
- <RainbowKitProvider  theme={lightTheme({
-      accentColor: '#f2c94c',
-      accentColorForeground: 'white',
-      borderRadius: 'large',
-      fontStack: 'system',
-      overlayBlur: 'small',
+ <RainbowKitProvider  theme={darkTheme({
+       accentColor: "#1a2031",
+       accentColorForeground: "#e4e6f1",
     }
     )}chains={chains}>
   <ChakraProvider>

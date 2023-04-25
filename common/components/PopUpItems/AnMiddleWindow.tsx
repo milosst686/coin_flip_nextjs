@@ -1,45 +1,53 @@
+import clsx from 'clsx'
 import React from 'react'
 
-export default function AnMiddleWindow() {
+interface WindowInterface{
+  outerDiv: string,
+  innerDiv: string,
+  textColor: string,
+  numberColor: string,
+}
+
+export default function AnMiddleWindow({outerDiv,innerDiv, textColor,numberColor}:WindowInterface) {
   return (
     <div className="h-[204px] px-[20px] py-[12px] bg-[rgba(76,82,139,.2)] rounded-[11px] text-[15px] font-bold">
-                <div className="h-[36px] flex items-center">
-                  <div className="h-[18px] w-1/2 text-font-100 flex items-center">
+                <div className={outerDiv}>
+                  <div className={clsx(innerDiv,textColor)}>
                     <span>Players</span>
                   </div>
-                  <div className="h-[18px] w-1/2 text-font-150 text-right flex items-center justify-end">
+                  <div className={clsx(numberColor)}>
                     <span>131</span>
                   </div>
                 </div>
-                <div className="h-[36px] flex items-center">
-                  <div className="h-[18px] w-1/2 text-font-100 flex items-center">
+                <div className={outerDiv}>
+                  <div className={clsx(innerDiv,textColor)}>
                     <span>Bets</span>
                   </div>
-                  <div className="h-[18px] w-1/2 text-font-150  flex items-center justify-end">
+                  <div className={clsx(innerDiv,numberColor)}>
                     <span>131</span>
                   </div>
                 </div>
-                <div className="h-[36px] flex items-center">
-                  <div className="h-[18px] w-1/2 text-font-100">
+                <div className={outerDiv}>
+                  <div className={clsx(innerDiv,textColor)}>
                     <span>Won Bets</span>
                   </div>
-                  <div className="h-[18px] w-1/2 text-font-150 text-right flex items-center justify-end">
+                  <div className={clsx(innerDiv,numberColor)}>
                     <span>131</span>
                   </div>
                 </div>
-                <div className="h-[36px] flex items-center ">
-                  <div className="h-[18px] w-1/2 text-font-100">
+                <div className={clsx(outerDiv)}>
+                  <div className={clsx(innerDiv,textColor)}>
                     <span>Wagered amount</span>
                   </div>
-                  <div className="h-[18px] w-1/2 text-font-150 text-right">
+                  <div className={clsx(innerDiv,numberColor)}>
                     <span>131</span>
                   </div>
                 </div>
-                <div className="h-[36px] flex items-center">
-                  <div className="h-[18px] w-1/2 text-font-100">
+                <div className={clsx(outerDiv)}>
+                  <div className={clsx(innerDiv,textColor)}>
                     <span>Payout amount</span>
                   </div>
-                  <div className="h-[18px] w-1/2 text-font-150 text-right">
+                  <div className={clsx(innerDiv,numberColor)}>
                     <span>131</span>
                   </div>
                 </div>

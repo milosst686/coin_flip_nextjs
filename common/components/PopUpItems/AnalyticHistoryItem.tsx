@@ -1,7 +1,7 @@
 import React from 'react'
 
-interface AnalyticHistoryInterface{
-    num: number;
+export interface AnalyticHistoryInterface{
+    num: string;
     player: string;
     logoImg: string;
     wageredAmount: number;

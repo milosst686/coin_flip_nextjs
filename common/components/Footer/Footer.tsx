@@ -18,12 +18,86 @@ export default function Footer() {
         },
         {
             player: "0xe7E...E71c1",
+            isWon: true,
             won: "Won bet",
             choosen: "Heads",
             toPayOut: "83,848.05",
             hours: "about 12 houres ago"
 
         },
+        {
+            player: "0xe7E...E71c1",
+            isWon: false,
+            won: "Busted",
+            choosen: "Tails",
+            toPayOut: "0",
+            hours: "about 12 houres ago"
+
+        },
+        {
+            player: "0xe7E...E71c1",
+            isWon: true,
+            won: "Won bet",
+            choosen: "Tails",
+            toPayOut: "35,098.05",
+            hours: "about 12 houres ago"
+
+        },
+        {
+            player: "0xe7E...E71c1",
+            isWon: true,
+            won: "Won bet",
+            choosen: "Heads",
+            toPayOut: "35,098.05",
+            hours: "about 12 houres ago"
+
+        },
+        {
+            player: "0xe7E...E71c1",
+            isWon: true,
+            won: "Won bet",
+            choosen: "Heads",
+            toPayOut: "35,098.05",
+            hours: "about 12 houres ago"
+
+        },
+        {
+            player: "0xe7E...E71c1",
+            isWon: true,
+            won: "Won bet",
+            choosen: "Heads",
+            toPayOut: "386,098.05",
+            hours: "about 12 houres ago"
+
+        },
+        {
+            player: "0xe7E...E71c1",
+            isWon: false,
+            won: "Busted",
+            choosen: "Tails",
+            toPayOut: "83,848.05",
+            hours: "about 12 houres ago"
+
+        },
+        {
+            player: "0xe7E...E71c1",
+            isWon: false,
+            won: "Busted",
+            choosen: "Tails",
+            toPayOut: "0",
+            hours: "about 12 houres ago"
+
+        },
+        {
+            player: "0xe7E...E71c1",
+            isWon: false,
+            won: "Busted",
+            choosen: "Tails",
+            toPayOut: "0",
+            hours: "about 12 houres ago"
+
+        },
+        
     ]
 
     //Now you can just itterate the array with betsHistory.map() and render all items
@@ -37,8 +111,7 @@ export default function Footer() {
                         All
                     </th>
                     <th className="text-start w-[10%] px-[8px]">Player</th>
-                    <th className="text-start w-[15%] px-[8px]">Target</th>
-                    <th className="text-start w-[10%] px-[8px]">Rolled</th>
+                    <th className="text-start w-[15%] px-[8px]">Target</th>                    <th className="text-start w-[10%] px-[8px]">Rolled</th>
                     <th className="text-start px-[8px]">Payout</th>
                     <th className="flex justify-end items-center h-[60px]  ">
                     <span>Time</span>
@@ -47,18 +120,9 @@ export default function Footer() {
             </thead>
             <tbody className="w-[100%] text-font-150 ">
                 {
-                //This should be dynamic 
+                betsHistory.map((e: HistoryInterface) => <FooterHistroryItem player={e.player} isWon={e.isWon} won={e.won} choosen={e.choosen}
+                 toPayOut={e.toPayOut} hours={e.hours} key={Date.now()}/>)
                 }
-                <FooterHistroryItem player="0xe7E...E71c1" isWon won="Won bet" choosen="Heads" toPayOut="11,698.05" hours="about 12 houres ago"  />
-                <FooterHistroryItem player="0xe7E...E71c1" isWon won="Won bet" choosen="Heads" toPayOut="83,848.05" hours="about 12 houres ago"  />
-                <FooterHistroryItem player="0xe7E...E71c1" won="Busted" choosen="Tails" toPayOut="0" hours="about 12 houres ago"  />
-                <FooterHistroryItem player="0xe7E...E71c1" isWon won="Won bet" choosen="Tails" toPayOut="35,098.05" hours="about 12 houres ago"  />
-                <FooterHistroryItem player="0xe7E...E71c1" isWon won="Won bet" choosen="Heads" toPayOut="35,098.05" hours="about 12 houres ago"  />
-                <FooterHistroryItem player="0xe7E...E71c1" isWon won="Won bet" choosen="Heads" toPayOut="35,098.05" hours="about 12 houres ago"  />
-                <FooterHistroryItem player="0xe7E...E71c1" isWon won="Won bet" choosen="Heads" toPayOut="386,098.05" hours="about 12 houres ago"  />
-                <FooterHistroryItem player="0xe7E...E71c1" won="Busted" choosen="Tails" toPayOut="0" hours="about 12 houres ago"  />
-                <FooterHistroryItem player="0xe7E...E71c1"  won="Busted" choosen="Tails" toPayOut="0" hours="about 12 houres ago"  />
-                <FooterHistroryItem player="0xe7E...E71c1"  won="Busted" choosen="Tails" toPayOut="0" hours="about 12 houres ago"  />
             </tbody>
         </table>
     </div>

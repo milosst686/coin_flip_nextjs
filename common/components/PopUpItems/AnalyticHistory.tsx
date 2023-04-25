@@ -1,8 +1,34 @@
 import React from 'react'
-import AnalyticHistoryItem from './AnalyticHistoryItem'
+import AnalyticHistoryItem, {AnalyticHistoryInterface} from './AnalyticHistoryItem'
 import {HiArrowNarrowDown} from 'react-icons/hi'
 
+
 export default function AnalyticHistory() {
+  const analyticHistory: AnalyticHistoryInterface[] = [
+    {num: "1.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "2.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "3.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "4.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "5.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "6.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "7.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "8.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "9.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "10.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "11.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "12.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "13.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "14.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "15.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "16.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "17.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "18.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "19.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+    {num: "20.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
+      
+    
+]
+
   return (
     <div className="p-[12px] ">
       {
@@ -20,26 +46,10 @@ export default function AnalyticHistory() {
           <span>Bets</span>
         </div>
       </div>
-      <AnalyticHistoryItem num={1} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={2} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={3} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={4} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={5} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={6} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={7} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={8} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={9} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={10} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={11} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={12} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={13} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={14} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={15} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={16} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={17} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={18} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={19} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
-      <AnalyticHistoryItem num={20} player="0x743...7302f" logoImg="/logo/Polygon.png" wageredAmount={97351.3252} numBets={1057}/>
+      {
+                analyticHistory.map((e: AnalyticHistoryInterface) => <AnalyticHistoryItem num={e.num} player={e.player} logoImg={e.logoImg} 
+                wageredAmount={e.wageredAmount} numBets={e.numBets} key={Date.now()}/>)
+                }
     </div>
   )
 }
