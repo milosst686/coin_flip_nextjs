@@ -22,13 +22,8 @@ export default function Analytics() {
           </div>
           <div className="lg:px-[40px] px-[20px] lg:pb-[40px] pb-[20px]">
           <div className="w-[100%] h-auto">
-                <Currency button="py-[7px] px-[12px] h-[26px] flex items-center"/>
-              <AnMiddleWindow 
-                outerDiv="h-[36px] flex items-center"  
-                innerDiv="h-[18px] w-1/2  flex items-center" 
-                textColor="text-font-100" 
-                numberColor="text-font-150 text-right justify-end"
-              />
+                <Currency />
+              <AnMiddleWindow />
           </div>
              <div className="p-[12px] w-full ">
               <div className="h-[52px] w-[520] text-font-100 flex items-center font-bold">

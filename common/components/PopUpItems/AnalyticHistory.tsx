@@ -25,15 +25,10 @@ export default function AnalyticHistory() {
     {num: "18.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
     {num: "19.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
     {num: "20.", player: "0x743...7302f",logoImg: "/logo/Polygon.png",wageredAmount: 97351.3252,numBets: 1057,},
-      
-    
 ]
 
   return (
     <div className="p-[12px] ">
-      {
-      // Add maping for AHItems
-      }
       <div className=" flex flex-row text-[14px] text-white w-full h-[60px]">
         <div className="px-[8px] border-b-[0.8px] border-b-ui-300 flex items-center w-[150px]">
           <span>Player</span>

@@ -2,10 +2,6 @@ import React from 'react'
 import FooterHistroryItem, { HistoryInterface } from './FooterHistroryItem'
 
 export default function Footer() {
-    //FooterHistoryItem components should be rendered as a list, not just via copy pasting them
-
-    //Heres an example array to do it 
-
     const betsHistory: HistoryInterface[] = [
         {
             player: "0xe7E...E71c1",
@@ -100,7 +96,6 @@ export default function Footer() {
         
     ]
 
-    //Now you can just itterate the array with betsHistory.map() and render all items
 
   return (
     <div className=" max-w-[100%] mx-5 pb-[40px] text-[14px] font-semibold">
@@ -111,7 +106,8 @@ export default function Footer() {
                         All
                     </th>
                     <th className="text-start w-[10%] px-[8px]">Player</th>
-                    <th className="text-start w-[15%] px-[8px]">Target</th>                    <th className="text-start w-[10%] px-[8px]">Rolled</th>
+                    <th className="text-start w-[15%] px-[8px]">Target</th>                   
+                    <th className="text-start w-[10%] px-[8px]">Rolled</th>
                     <th className="text-start px-[8px]">Payout</th>
                     <th className="flex justify-end items-center h-[60px]  ">
                     <span>Time</span>

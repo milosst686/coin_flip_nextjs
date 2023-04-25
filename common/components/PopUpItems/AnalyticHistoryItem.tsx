@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image';
 
 export interface AnalyticHistoryInterface{
     num: string;
@@ -16,7 +17,7 @@ export interface AnalyticHistoryInterface{
       <a href="" target='_blank' className="text-[18px]">{player}</a>
     </div>
     <div className="px-[8px] border-b-[0.8px] border-b-ui-300 flex items-center w-[245px] h-full gap-x-1">
-        <img src={logoImg} alt="" width={14} height={14} />
+        <Image src={logoImg} alt="" width={14} height={14} />
       <span>{wageredAmount}</span>
     </div>
     <div className="px-[8px] border-b-[0.8px] border-b-ui-300 flex items-center w-[128px] h-full">
