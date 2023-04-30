@@ -3,11 +3,55 @@ import {RiArrowDownSFill, RiArrowUpSFill} from 'react-icons/ri';
 import MainMiddleTextComp from './MainMiddleTextComp';
 import MainPadding from './MainPadding';
 import {SiBinance} from 'react-icons/si'
+import { 
+  useAccount, 
+  useBalance, 
+  useNetwork,
+  useContractWrite,
+  usePrepareContractWrite,
+  useWaitForTransaction,
+   } from 'wagmi';
+import {ethers} from "ethers";
+import { FlipCoin } from '../constants/flipCoin';
+import customHook from '../hooks/customHook';
 
+interface BettingSectionProps{
+  choice: boolean
+}
 
+export default function MainMiddle({choice}:BettingSectionProps) {
 
-export default function MainMiddle() {
-  const [isOpen, setIsOpen] = useState(false);
+const [amount, setAmount] = useState("0");
+
+const {address, isConnecting} = useAccount();
+const {chain}= useNetwork();
+
+const balance = useBalance({
+  address: address,
+  chainId: Number(FlipCoin.chainId),
+})
+const {data: contractBalance} = useBalance({
+  address: FlipCoin.address,
+  chainId: Number(FlipCoin.chainId),
+})
+
+const debouncedChoice = customHook(choice, 500)
+const debouncedAmount = customHook(amount, 500)
+
+const   { config } = usePrepareContractWrite({
+  address: FlipCoin.address,
+    //How to add abi in usePrepareContractWrite you used abi: coinFlipContract.abi where you find that ? if i uncomment below it will give error
+  //abi: coinFlipContract.abi,
+  functionName: "flip",
+  args: [Number(debouncedChoice)],
+  overrides:{
+    value: ethers.utils.parseEther(debouncedAmount),
+  },
+  enabled: Number(debouncedAmount)> 0,
+})
+
+const {data,write} = useContractWrite(/*config - not working since no abi*/);
+ const [isOpen, setIsOpen] = useState(false);
 
   function closeOnClick()
 {
@@ -30,7 +74,7 @@ export default function MainMiddle() {
                 </div>
 
                 <div className="bg-ui-200 flex items-center border-r border-r-ui-400 w-2/3">
-                <input required type="text" inputMode="numeric" defaultValue={0} className=" bg-ui-200 text-white text-xl mx-[20px] w-1/2 " />
+                <input required type="text" inputMode="numeric" defaultValue={amount} className=" bg-ui-200 text-white text-xl mx-[20px] w-1/2 " />
                 <button className=" bg-ui-400 text-font-400 rounded-xl m-[14px] h-[28px] w-[50px] ">max</button>
                 </div>
                 <div className="bg-ui-200 rounded-r-xl w-1/3 flex items-center justify-center cursor-pointer  hover:bg-ui-300"  
@@ -60,7 +104,10 @@ export default function MainMiddle() {
                     </div>
                 </div>
               </div>
-              <MainMiddleTextComp />
+              <MainMiddleTextComp 
+              //How to set bal= balance witch is = to useBalance ?
+              bal="2013"
+              />
               <div className="mt-12 w-[100%] flex justify-center">
                 <button type="button" disabled={true} className="rounded-xl border-2 border-accent-300 bg-transparent text-accent-300 text-[15px] font-semibold w-full h-[50px]">
                     Connect your Wallet
