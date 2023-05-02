@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import {RiArrowDownSFill, RiArrowUpSFill} from 'react-icons/ri';
 import MainMiddleTextComp from './MainMiddleTextComp';
 import MainPadding from './MainPadding';
-import {SiBinance} from 'react-icons/si'
+import {SiBinance} from 'react-icons/si';
+import coinFlipContract from "@/common/abi/json/CoinFlip.json"
 import { 
   useAccount, 
   useBalance, 
@@ -19,8 +20,10 @@ interface BettingSectionProps{
   choice: boolean
 }
 
+export const toEther = (bigNum: ethers.BigNumber | undefined) => {
+  return ethers.utils.formatEther(bigNum ?? 0).slice(0, 6)
+}
 export default function MainMiddle({choice}:BettingSectionProps) {
-
 const [amount, setAmount] = useState("0");
 
 const {address, isConnecting} = useAccount();
@@ -40,8 +43,7 @@ const debouncedAmount = customHook(amount, 500)
 
 const   { config } = usePrepareContractWrite({
   address: FlipCoin.address,
-    //How to add abi in usePrepareContractWrite you used abi: coinFlipContract.abi where you find that ? if i uncomment below it will give error
-  //abi: coinFlipContract.abi,
+  abi: coinFlipContract.abi,
   functionName: "flip",
   args: [Number(debouncedChoice)],
   overrides:{
@@ -50,7 +52,7 @@ const   { config } = usePrepareContractWrite({
   enabled: Number(debouncedAmount)> 0,
 })
 
-const {data,write} = useContractWrite(/*config - not working since no abi*/);
+const {data,write} = useContractWrite(config);
  const [isOpen, setIsOpen] = useState(false);
 
   function closeOnClick()
@@ -105,8 +107,7 @@ const {data,write} = useContractWrite(/*config - not working since no abi*/);
                 </div>
               </div>
               <MainMiddleTextComp 
-              //How to set bal= balance witch is = to useBalance ?
-              bal="2013"
+              bal= {toEther(balance?.data?.value)}
               />
               <div className="mt-12 w-[100%] flex justify-center">
                 <button type="button" disabled={true} className="rounded-xl border-2 border-accent-300 bg-transparent text-accent-300 text-[15px] font-semibold w-full h-[50px]">
