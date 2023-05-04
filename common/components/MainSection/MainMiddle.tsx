@@ -2,12 +2,58 @@ import React, { useState } from 'react';
 import {RiArrowDownSFill, RiArrowUpSFill} from 'react-icons/ri';
 import MainMiddleTextComp from './MainMiddleTextComp';
 import MainPadding from './MainPadding';
-import {SiBinance} from 'react-icons/si'
+import {SiBinance} from 'react-icons/si';
+import coinFlipContract from "@/common/abi/json/CoinFlip.json"
+import { 
+  useAccount, 
+  useBalance, 
+  useNetwork,
+  useContractWrite,
+  usePrepareContractWrite,
+  useWaitForTransaction,
+   } from 'wagmi';
+import {ethers} from "ethers";
+import { FlipCoin } from '../constants/flipCoin';
+import customHook from '../hooks/customHook';
 
+interface BettingSectionProps{
+  choice: boolean
+}
 
+export const toEther = (bigNum: ethers.BigNumber | undefined) => {
+  return ethers.utils.formatEther(bigNum ?? 0).slice(0, 6)
+}
+export default function MainMiddle({choice}:BettingSectionProps) {
+const [amount, setAmount] = useState("0");
 
-export default function MainMiddle() {
-  const [isOpen, setIsOpen] = useState(false);
+const {address, isConnecting} = useAccount();
+const {chain}= useNetwork();
+
+const balance = useBalance({
+  address: address,
+  chainId: Number(FlipCoin.chainId),
+})
+const {data: contractBalance} = useBalance({
+  address: FlipCoin.address,
+  chainId: Number(FlipCoin.chainId),
+})
+
+const debouncedChoice = customHook(choice, 500)
+const debouncedAmount = customHook(amount, 500)
+
+const   { config } = usePrepareContractWrite({
+  address: FlipCoin.address,
+  abi: coinFlipContract.abi,
+  functionName: "flip",
+  args: [Number(debouncedChoice)],
+  overrides:{
+    value: ethers.utils.parseEther(debouncedAmount),
+  },
+  enabled: Number(debouncedAmount)> 0,
+})
+
+const {data,write} = useContractWrite(config);
+ const [isOpen, setIsOpen] = useState(false);
 
   function closeOnClick()
 {
@@ -30,7 +76,7 @@ export default function MainMiddle() {
                 </div>
 
                 <div className="bg-ui-200 flex items-center border-r border-r-ui-400 w-2/3">
-                <input required type="text" inputMode="numeric" defaultValue={0} className=" bg-ui-200 text-white text-xl mx-[20px] w-1/2 " />
+                <input required type="text" inputMode="numeric" defaultValue={amount} className=" bg-ui-200 text-white text-xl mx-[20px] w-1/2 " />
                 <button className=" bg-ui-400 text-font-400 rounded-xl m-[14px] h-[28px] w-[50px] ">max</button>
                 </div>
                 <div className="bg-ui-200 rounded-r-xl w-1/3 flex items-center justify-center cursor-pointer  hover:bg-ui-300"  
@@ -60,7 +106,9 @@ export default function MainMiddle() {
                     </div>
                 </div>
               </div>
-              <MainMiddleTextComp />
+              <MainMiddleTextComp 
+              bal= {toEther(balance?.data?.value)}
+              />
               <div className="mt-12 w-[100%] flex justify-center">
                 <button type="button" disabled={true} className="rounded-xl border-2 border-accent-300 bg-transparent text-accent-300 text-[15px] font-semibold w-full h-[50px]">
                     Connect your Wallet

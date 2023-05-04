@@ -8,8 +8,9 @@ export default function MainSection() {
         <div className="py-6 px-5 cursor-default">
           <div className="bg-background bg-opacity-20 bg-cover w-[100%] h-[650px] rounded-xl fill-current flex flex-col items-center">
             <MainHeader/>
-            <MainMiddle />
+            <MainMiddle choice/>
         </div>
         </div>
   )
 }
+ 
