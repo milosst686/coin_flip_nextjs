@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import MainSection from '@/common/components/MainSection/MainSection';
 import Header from '@/common/components/Header/Header';
-import NavBar from '@/common/components/NavBarItem/NavBar';
+import NavBar from '@/common/components/NavBar/NavBar';
 import Footer from '@/common/components/Footer/Footer';
 
 
