@@ -117,8 +117,8 @@ export default function Footer() {
 
             <tbody className="w-[100%] text-font-150 ">
                 {
-                betsHistory.map((e: HistoryInterface) => <FooterHistroryItem player={e.player} isWon={e.isWon} won={e.won} choosen={e.choosen}
-                 toPayOut={e.toPayOut} hours={e.hours} key={Date.now()}/>)
+                betsHistory.map((e: HistoryInterface, index) => <FooterHistroryItem player={e.player} isWon={e.isWon} won={e.won} choosen={e.choosen}
+                 toPayOut={e.toPayOut} hours={e.hours} key={index}/>)
                 }
 
             </tbody>
