@@ -8,13 +8,16 @@ import {
     RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';  
 import { configureChains,createClient,sepolia,WagmiConfig} from 'wagmi';
-import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
+
+import { mainnet, polygon, sepolia } from 'wagmi/chains';
+
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
-import { color } from 'framer-motion';
 
 const { chains, provider } = configureChains(
-  [mainnet, polygon, optimism, sepolia],
+
+  [mainnet, polygon, sepolia],
+
   [
     alchemyProvider({ apiKey: `${process.env.ALCHEMY_ID}` }),
     publicProvider()
