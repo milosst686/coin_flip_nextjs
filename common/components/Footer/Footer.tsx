@@ -1,101 +1,44 @@
 import React from 'react'
 import FooterHistroryItem, { HistoryInterface } from './FooterHistroryItem'
+import { usePastEvents } from '@/common/query/queries'
+import { toEther } from '../MainSection/MainMiddle'
 
 export default function Footer() {
-    const betsHistory: HistoryInterface[] = [
-        {
-            player: "0xe7E...E71c1",
-            isWon: true,
-            won: "Won bet",
-            choosen: "Heads",
-            toPayOut: "11,698.05",
-            hours: "about 12 houres ago"
+   
+     const walletCutter = (wallet: string) => {
+        return `${wallet.slice(0, 5)}...${wallet.slice(-5)}`
+      }
 
-        },
-        {
-            player: "0xe7E...E71c1",
-            isWon: true,
-            won: "Won bet",
-            choosen: "Heads",
-            toPayOut: "83,848.05",
-            hours: "about 12 houres ago"
+    const { data: pastEvents } = usePastEvents()
 
-        },
-        {
-            player: "0xe7E...E71c1",
-            isWon: false,
-            won: "Busted",
-            choosen: "Tails",
-            toPayOut: "0",
-            hours: "about 12 houres ago"
+    function timeSince(date: Date) {
 
-        },
-        {
-            player: "0xe7E...E71c1",
-            isWon: true,
-            won: "Won bet",
-            choosen: "Tails",
-            toPayOut: "35,098.05",
-            hours: "about 12 houres ago"
-
-        },
-        {
-            player: "0xe7E...E71c1",
-            isWon: true,
-            won: "Won bet",
-            choosen: "Heads",
-            toPayOut: "35,098.05",
-            hours: "about 12 houres ago"
-
-        },
-        {
-            player: "0xe7E...E71c1",
-            isWon: true,
-            won: "Won bet",
-            choosen: "Heads",
-            toPayOut: "35,098.05",
-            hours: "about 12 houres ago"
-
-        },
-        {
-            player: "0xe7E...E71c1",
-            isWon: true,
-            won: "Won bet",
-            choosen: "Heads",
-            toPayOut: "386,098.05",
-            hours: "about 12 houres ago"
-
-        },
-        {
-            player: "0xe7E...E71c1",
-            isWon: false,
-            won: "Busted",
-            choosen: "Tails",
-            toPayOut: "83,848.05",
-            hours: "about 12 houres ago"
-
-        },
-        {
-            player: "0xe7E...E71c1",
-            isWon: false,
-            won: "Busted",
-            choosen: "Tails",
-            toPayOut: "0",
-            hours: "about 12 houres ago"
-
-        },
-        {
-            player: "0xe7E...E71c1",
-            isWon: false,
-            won: "Busted",
-            choosen: "Tails",
-            toPayOut: "0",
-            hours: "about 12 houres ago"
-
-        },
-        
-    ]
-
+        //@ts-ignore
+        var seconds = Math.floor(Number(new Date() - date) / 1000);
+      
+        var interval = seconds / 31536000;
+      
+        if (interval > 1) {
+          return Math.floor(interval) + " years ago";
+        }
+        interval = seconds / 2592000;
+        if (interval > 1) {
+          return Math.floor(interval) + " months ago";
+        }
+        interval = seconds / 86400;
+        if (interval > 1) {
+          return Math.floor(interval) + " days ago";
+        }
+        interval = seconds / 3600;
+        if (interval > 1) {
+          return Math.floor(interval) + " hours ago";
+        }
+        interval = seconds / 60;
+        if (interval > 1) {
+          return Math.floor(interval) + " minutes ago";
+        }
+        return Math.floor(seconds) + " seconds ago";
+      }
 
   return (
     <div className=" max-w-[100%] mx-5 pb-[40px] text-[14px] font-semibold">
@@ -117,8 +60,9 @@ export default function Footer() {
 
             <tbody className="w-[100%] text-font-150 ">
                 {
-                betsHistory.map((e: HistoryInterface, index) => <FooterHistroryItem player={e.player} isWon={e.isWon} won={e.won} choosen={e.choosen}
-                 toPayOut={e.toPayOut} hours={e.hours} key={index}/>)
+                pastEvents?.map((e, index) => <FooterHistroryItem player={walletCutter(e.returnValues.player)} isWon={Boolean(Number(e.returnValues.amountWon) 
+                    > 0)} choosen={e.returnValues.playerChoice}
+                 toPayOut={toEther(e.returnValues.amountWon)} hours={timeSince(new Date(e.returnValues.timeStamp * 1000))} key={index}/>)
                 }
 
             </tbody>
