@@ -7,14 +7,13 @@ import {
   getDefaultWallets,
     RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';  
-import { configureChains,createClient,WagmiConfig} from 'wagmi';
-import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
+import { configureChains,createClient,sepolia,WagmiConfig} from 'wagmi';
+import { mainnet, polygon } from 'wagmi/chains';
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
-import { color } from 'framer-motion';
 
 const { chains, provider } = configureChains(
-  [mainnet, polygon, optimism, arbitrum],
+  [mainnet, polygon, sepolia],
   [
     alchemyProvider({ apiKey: process.env.ALCHEMY_ID }),
     publicProvider()
