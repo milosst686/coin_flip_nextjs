@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import {BsFillBellFill} from 'react-icons/bs';
-import {SiBinance} from 'react-icons/si';
-import {MdKeyboardArrowDown,MdKeyboardArrowUp,MdOutlineLan} from 'react-icons/md';
-import HeaderPadingItem from './HeaderPadingItem';
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import {FaGripLines} from 'react-icons/fa';
-import NavBar from '../NavBarItem/NavBar';
+import NavBar from '../NavBar/NavBar';
+
+//import {SiBinance} from 'react-icons/si';
+//import {MdKeyboardArrowDown,MdKeyboardArrowUp,MdOutlineLan} from 'react-icons/md';
+//import HeaderPadingItem from './HeaderPadingItem';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,8 +27,8 @@ export default function Header() {
                             )
                     }
         <div className="mx-0 hidden lg:block">
-        <button className=" uppercase rounded-full border-accent-250 border  w-[117px] h-[36px] ml-5 items-center">
-          <span className="text-accent-250 text-[13px]"> Swap $Coins</span>  
+        <button className="rounded-xl flex border-accent-250 border w-[117px] h-[36px] ml-5 items-center justify-center">
+          <span className="text-accent-250 text-[13px] font-bold"> Swap $Coins</span>  
         </button>
         </div>
         
@@ -36,7 +37,7 @@ export default function Header() {
          <span className="rounded-full bg-ui-100 text-white w-[48px] h-[36px] flex items-center justify-center"> 
             <BsFillBellFill />
           </span>
-          <span className="rounded-full bg-ui-100 h-[36px] w-[70px] text-accent-300 flex items-center justify-center cursor-pointer"  onClick={()=>{setIsOpen(!isOpen)}}>
+          {/* <span className="rounded-full bg-ui-100 h-[36px] w-[70px] text-accent-300 flex items-center justify-center cursor-pointer"  onClick={()=>{setIsOpen(!isOpen)}}>
 
             <SiBinance className="h-5 w-5"/>
             {!isOpen ? (<MdKeyboardArrowDown className="h-5 w-5" />) : (<MdKeyboardArrowUp className="h-5 w-5" />) }
@@ -56,7 +57,8 @@ export default function Header() {
               </div>
             )
           }
-         </div>
+          */}
+         </div> 
           <div className=" text-[13px] font-medium w-auto  flex items-center justify-center cursor-pointer pr-2">
           <ConnectButton accountStatus="address"
          showBalance={false}
