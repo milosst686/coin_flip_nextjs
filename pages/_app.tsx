@@ -7,12 +7,15 @@ import {
   getDefaultWallets,
     RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';  
-import { configureChains,createClient,sepolia,WagmiConfig} from 'wagmi';
+import { configureChains,createClient,WagmiConfig} from 'wagmi';
 
 import { mainnet, polygon, sepolia } from 'wagmi/chains';
 
 import { alchemyProvider } from 'wagmi/providers/alchemy';
 import { publicProvider } from 'wagmi/providers/public';
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query"
+
+const queryClient = new QueryClient()
 
 const { chains, provider } = configureChains(
 
@@ -38,6 +41,7 @@ const wagmiClient = createClient({
 export default function App({ Component, pageProps }: AppProps) {
   
   return (
+    <QueryClientProvider client={queryClient}>
  <WagmiConfig client={wagmiClient}>
  <RainbowKitProvider  theme={darkTheme({
        accentColor: "#1a2031",
@@ -49,5 +53,6 @@ export default function App({ Component, pageProps }: AppProps) {
 </ChakraProvider>
  </RainbowKitProvider>
 </WagmiConfig>
+</QueryClientProvider>
 )
 }

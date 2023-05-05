@@ -64,9 +64,6 @@ const { isLoading } = useWaitForTransaction({
   hash: data?.hash,
 })
 
-console.log('write is ' + data)
-
-
   return (
     <div className="flex flex-1 flex-col items-center lg:p-[12px] p-2 mt-[60px] w-full max-w-[440px]">
 
@@ -110,6 +107,7 @@ console.log('write is ' + data)
               </div>
               <MainMiddleTextComp 
               bal={toEther(contractBalance?.value)}
+              amount={amount}
               />
               <div className="mt-12 w-[100%] flex justify-center">
                 <button type="button"  disabled={!write || isLoading}  onClick={() => write?.()} className="rounded-xl border-2 border-accent-300 bg-transparent text-accent-300 text-[15px] font-semibold w-full h-[50px]">

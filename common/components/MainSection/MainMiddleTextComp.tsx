@@ -3,9 +3,10 @@ import {IoMdInformationCircleOutline} from 'react-icons/io';
 
 interface MainTextInterface{
     bal: string,
+    amount: string
 }
 
-export default function MainMiddleTextComp({bal}:MainTextInterface) {
+export default function MainMiddleTextComp({bal, amount}:MainTextInterface) {
   return (
 
     <div className="w-full flex justify-center">
@@ -20,14 +21,14 @@ export default function MainMiddleTextComp({bal}:MainTextInterface) {
                     <div className="mt-2">
 
                         <span>Bank: </span>
-                        <span>{bal} MATIC</span>
+                        <span>{bal} ETH</span>
                     </div>
                 </div>
                 <div className="text-end">
 
                     <div className="lg:flex gap-x-1 justify-end">
                         <span>Target payout: </span>
-                        <span> ~0 MATIC</span>
+                        <span> ~{Number(amount) * 1.94} ETH</span>
                         <IoMdInformationCircleOutline  className="text-accent-300 text-sm mt-[2px]"/>
                     </div>
                     <div className="mt-2">
