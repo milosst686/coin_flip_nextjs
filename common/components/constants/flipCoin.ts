@@ -5,5 +5,5 @@ interface flipCoinInterface{
 
 export const FlipCoin : flipCoinInterface = {
     chainId: "11155111",
-  address: "0x310D57597B738e93733b9bEa649BCd14a85c946c",
+  address: "0x9A0D377bf0A422849eD12320806b06a6CFC97b09",
 }

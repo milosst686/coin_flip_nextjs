@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {RiArrowDownSFill, RiArrowUpSFill} from 'react-icons/ri';
 import MainMiddleTextComp from './MainMiddleTextComp';
 import MainPadding from './MainPadding';
@@ -14,22 +14,29 @@ import {
    } from 'wagmi';
 import {ethers} from "ethers";
 import { FlipCoin } from '../constants/flipCoin';
-import customHook from '../hooks/customHook';
+import useDebounce from '../hooks/useDebounce';
 
-interface BettingSectionProps{
-  choice: boolean
-}
 
 export const toEther = (bigNum: ethers.BigNumber | undefined) => {
   return ethers.utils.formatEther(bigNum ?? 0).slice(0, 6)
 }
-export default function MainMiddle({choice}:BettingSectionProps) {
+export default function MainMiddle() {
+  const [isOpen, setIsOpen] = useState(false);
 const [amount, setAmount] = useState("0");
 
-const {address, isConnecting} = useAccount();
+const {address} = useAccount();
 const {chain}= useNetwork();
 
-const balance = useBalance({
+const [choice, setChoice] = useState(false)
+
+const videoRef = useRef<HTMLVideoElement>(null)
+
+const onCoinClick = () => {
+  setChoice(!choice)
+  videoRef.current?.play()
+}
+
+const { data: balance } = useBalance({
   address: address,
   chainId: Number(FlipCoin.chainId),
 })
@@ -38,10 +45,10 @@ const {data: contractBalance} = useBalance({
   chainId: Number(FlipCoin.chainId),
 })
 
-const debouncedChoice = customHook(choice, 500)
-const debouncedAmount = customHook(amount, 500)
+const debouncedChoice = useDebounce(choice, 500)
+const debouncedAmount = useDebounce(amount, 500)
 
-const   { config } = usePrepareContractWrite({
+const { config } = usePrepareContractWrite({
   address: FlipCoin.address,
   abi: coinFlipContract.abi,
   functionName: "flip",
@@ -52,37 +59,34 @@ const   { config } = usePrepareContractWrite({
   enabled: Number(debouncedAmount)> 0,
 })
 
-const {data,write} = useContractWrite(config);
- const [isOpen, setIsOpen] = useState(false);
+const {data, write} = useContractWrite(config);
+const { isLoading } = useWaitForTransaction({
+  hash: data?.hash,
+})
 
-  function closeOnClick()
-{
-  if(isOpen)
-  {
-    setIsOpen((prev)=> !prev);
-  }
-}
+console.log('write is ' + data)
+
 
   return (
-    <div className="flex flex-1 flex-col items-center lg:p-[12px] p-2 " onClick={() => closeOnClick()}>
+    <div className="flex flex-1 flex-col items-center lg:p-[12px] p-2 mt-[60px] w-full max-w-[440px]">
 
               <p className="text-white font-bold font-sans text-[72px] ">
                 1.94x
               </p>
-              <video src="/Matic_heads.webm"  width="140" height="140" autoPlay={true} />
+              <video src="/Matic_heads.webm"  width="140" height="140" className="mb-[10px] cursor-pointer brightness-80 contrast-75 hover:brightness-100 hover:contrast-100" ref={videoRef}
+          onClick={onCoinClick} />
               <div className="flex justify-center w-full">
                 <div className="uppercase bg-ui-200 text-sm font-bold text-font-400 rounded-l-xl h-[56px] w-1/3 flex items-center justify-center border-r border-r-ui-400">
                   <p>bet</p>
                 </div>
 
                 <div className="bg-ui-200 flex items-center border-r border-r-ui-400 w-2/3">
-                <input required type="text" inputMode="numeric" defaultValue={amount} className=" bg-ui-200 text-white text-xl mx-[20px] w-1/2 " />
-                <button className=" bg-ui-400 text-font-400 rounded-xl m-[14px] h-[28px] w-[50px] ">max</button>
+                <input required type="text" inputMode="numeric" value={amount}
+            onChange={(event) => setAmount(event.target.value)} className=" bg-ui-200 text-white text-xl mx-[20px] w-1/2 " />
+                <button  onClick={() => setAmount(toEther(balance?.value))} className=" bg-ui-400 text-font-400 rounded-xl m-[14px] h-[28px] w-[50px] ">max</button>
                 </div>
                 <div className="bg-ui-200 rounded-r-xl w-1/3 flex items-center justify-center cursor-pointer  hover:bg-ui-300"  
-                onClick={() => {if(!isOpen) {setIsOpen((prev)=> !prev);}
-                                if(isOpen) closeOnClick;
-              }}>
+                onClick={() => setIsOpen(!isOpen)}>
                     <div className="flex items-center justify-center w-full">
 
                     {!isOpen ? (<RiArrowDownSFill className="text-font-400 text-2xl" />) 
@@ -100,18 +104,20 @@ const {data,write} = useContractWrite(config);
 
                           eth
                         </span>
-                        <div className="w-[20px] h-[20px] mt-[2px] text-accent-300">
-                          <SiBinance />
-                        </div>
+                       
                     </div>
                 </div>
               </div>
               <MainMiddleTextComp 
-              bal= {toEther(balance?.data?.value)}
+              bal={toEther(contractBalance?.value)}
               />
               <div className="mt-12 w-[100%] flex justify-center">
-                <button type="button" disabled={true} className="rounded-xl border-2 border-accent-300 bg-transparent text-accent-300 text-[15px] font-semibold w-full h-[50px]">
-                    Connect your Wallet
+                <button type="button"  disabled={!write || isLoading}  onClick={() => write?.()} className="rounded-xl border-2 border-accent-300 bg-transparent text-accent-300 text-[15px] font-semibold w-full h-[50px]">
+                {chain?.id !== Number(FlipCoin.chainId)
+              ? "Change Network"
+              : isLoading
+              ? "Flipping..."
+              : "Flip Heads"}
                     </button>
               </div>
            </div>        
