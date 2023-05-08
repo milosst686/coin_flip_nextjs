@@ -64,7 +64,7 @@ const {data,write} = useContractWrite(config);
 }
 
   return (
-    <div className="flex flex-1 flex-col items-center lg:p-[12px] p-2 w-full max-w-[440px]" onClick={() => closeOnClick()}>
+    <div className="flex flex-1 flex-col items-center lg:p-[12px] p-2 " onClick={() => closeOnClick()}>
 
               <p className="text-white font-bold font-sans text-[72px] ">
                 1.94x

@@ -6,7 +6,7 @@ import {SiCoinmarketcap} from 'react-icons/si'
 
 export default function NavBar() {
   return (
-       <div className=" bg-ui-300 h-screen shadow-black  shadow-2xl fixed pb-[20px]">
+       <div className=" bg-ui-300 h-[100%] shadow-black  shadow-2xl fixed pb-[20px]">
         <div className=" px-[20px] py-[16px] ">
           <div className="flex items-center h-[50px]">
           <Image src="/logo/logo.svg" alt="/" width={34} height={34} className="my-[8px] mr-[11px]"/>
@@ -57,7 +57,7 @@ export default function NavBar() {
           </a>
         </div>
        <div className="px-[16px]">
-       <div className="flex items-center text-white  w-[232px] h-[40px] text-[15px]" >
+       <div className="flex items-center text-white w-[300px] lg:w-[232px] h-[40px] text-[15px]" >
           <a href="" target="_blank" className=" flex items-center justify-center w-[36px] h-[36px] hover:bg-ui-400 rounded-full">
             <img src="/rightArrow.png" alt="" height={15} width={15}/>
           </a>

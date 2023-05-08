@@ -98,8 +98,8 @@ export default function Footer() {
 
 
   return (
-    <div className=" max-w-[100%] mx-5 pb-[40px] text-[14px] font-semibold">
-        <table className="w-[100%] ">
+    <div className=" mx-5 pb-[40px] text-[14px] font-semibold lg:w-full">
+        <table className="w-full">
             <thead className="border-b border-b-ui-400 text-white px-[8px] h-[60px]">
                 <tr>
                 <th className="text-start w-[15%] min-w-[15%] px-[8px]">
