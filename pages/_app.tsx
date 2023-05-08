@@ -7,7 +7,7 @@ import {
   getDefaultWallets,
     RainbowKitProvider,
 } from '@rainbow-me/rainbowkit';  
-import { configureChains,createClient,sepolia,WagmiConfig} from 'wagmi';
+import { configureChains,createClient,WagmiConfig} from 'wagmi';
 
 import { mainnet, polygon, sepolia } from 'wagmi/chains';
 

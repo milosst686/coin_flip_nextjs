@@ -98,7 +98,7 @@ export default function Footer() {
 
 
   return (
-    <div className=" mx-5 pb-[40px] text-[14px] font-semibold lg:w-full">
+    <div className=" mx-5 pb-[40px] text-[14px] font-semibold">
         <table className="w-full">
             <thead className="border-b border-b-ui-400 text-white px-[8px] h-[60px]">
                 <tr>
