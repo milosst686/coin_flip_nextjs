@@ -1,9 +1,8 @@
-import Head from 'next/head'
-import MainSection from '@/common/components/MainSection/MainSection';
-import Header from '@/common/components/Header/Header';
-import NavBar from '@/common/components/NavBar/NavBar';
-import Footer from '@/common/components/Footer/Footer';
-
+import Head from "next/head";
+import MainSection from "../common/components/MainSection/MainSection";
+import NavBar from "../common/components/NavBar/NavBar";
+import Header from "../common/components/Header/Header";
+import Footer from "../common/components/Footer/Footer";
 
 export default function Home() {
   return (
@@ -12,20 +11,19 @@ export default function Home() {
         <title>Coin flip</title>
       </Head>
       <main>
-        <nav >
+        <nav>
           <div className="flex bg-ui-200 min-h-screen w-max sm:w-full tracking-wider">
             <div className="invisible lg:visible">
-            <NavBar />
+              <NavBar />
             </div>
             <div className=" lg:ml-[264px] w-full">
               <Header />
-              <MainSection  />
+              <MainSection />
               <Footer />
             </div>
           </div>
-          
         </nav>
       </main>
     </>
-  )
+  );
 }
